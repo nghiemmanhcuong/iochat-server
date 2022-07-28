@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 
 const app = express();
-const POST = process.env.POST || 5005;
+var post = process.env.PORT || 5005;
 
 const authRoute = require('./routes/authRoute.js');
 const userRoute = require('./routes/userRoute.js');
@@ -44,8 +44,8 @@ const connectDB = async () => {
 
 connectDB();
 
-app.listen(POST, () => {
-    console.log('server runing in post ' + POST);
+app.listen(post, () => {
+    console.log('server runing in post ' + post);
 });
 
 // routes
